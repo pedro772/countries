@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container } from "./styles";
 import { Heading } from "./styles";
-import { ThemeSwitcher } from "./styles";
+import { ThemeSwitcherButton } from "./styles";
 import { ThemeSwitcherIcon } from "./styles";
 
 export function Navbar() {
@@ -11,10 +11,10 @@ export function Navbar() {
       <Heading>
         Where in the world?
       </Heading>
-      <ThemeSwitcher>
+      <ThemeSwitcherButton>
         <ThemeSwitcherIcon src="/assets/moon-solid-white.svg" />
         Dark Mode
-      </ThemeSwitcher>
+      </ThemeSwitcherButton>
     </Container>
   );
 }

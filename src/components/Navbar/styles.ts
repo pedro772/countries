@@ -21,7 +21,7 @@ export const Heading = styled.h2`
   }
 `;
 
-export const ThemeSwitcher = styled.button`
+export const ThemeSwitcherButton = styled.button`
   display: flex;
   align-items: center;
 
