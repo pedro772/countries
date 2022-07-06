@@ -9,28 +9,43 @@ export const Container = styled.nav`
 `;
 
 export const Heading = styled.h2`
-  margin-left: 3vw;
   color: hsl(0, 0%, 100%);
-  font-size: 1.3rem;
+
+  margin-left: 3vh;
+  font-size: 0.9rem;
   font-weight: 800;
+  
+  @media (min-width: 600px) {
+    margin-left: 3vw;
+    font-size: 1.3rem;
+  }
 `;
 
 export const ThemeSwitcher = styled.button`
   display: flex;
   align-items: center;
 
-  margin-right: 3vw;
+  color: hsl(0, 0%, 100%);
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  color: hsl(0, 0%, 100%);
-
   font-family: "Nunito Sans";
-  font-size: 1rem;
   font-weight: 300;
+  
+  margin-right: 3vh;
+  font-size: 0.6rem;
+
+  @media (min-width: 600px) {
+    margin-left: 3vw;
+    font-size: 1rem;
+  }
 `
 
 export const ThemeSwitcherIcon = styled.img`
   margin-right: 0.5rem;
-  height: 1rem;
+  height: 0.6rem;
+
+  @media (min-width: 600px) {
+    height: 1rem;
+  }
 `

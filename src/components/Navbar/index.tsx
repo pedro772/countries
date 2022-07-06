@@ -12,7 +12,7 @@ export function Navbar() {
         Where in the world?
       </Heading>
       <ThemeSwitcher>
-        <ThemeSwitcherIcon src="/assets/moon-solid.svg" />
+        <ThemeSwitcherIcon src="/assets/moon-solid-white.svg" />
         Dark Mode
       </ThemeSwitcher>
     </Container>
