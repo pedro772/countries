@@ -4,6 +4,6 @@ export const Container = styled.div`
   margin-top: 30px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, 320px);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
 `;
