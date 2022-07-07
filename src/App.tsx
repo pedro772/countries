@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { CountryCard } from "./components/CountryCard";
+import { Countries } from "./components/Countries";
 import { Navbar } from "./components/Navbar"
 
 interface CountryData {
@@ -17,7 +17,7 @@ interface CountryData {
   };
   population: number;
   region: string;
-  capital: string[];
+  capital?: string[];
 }
 
 function App() {
@@ -43,12 +43,8 @@ function App() {
       {
         data &&
           <>
-            <CountryCard 
-              flag={data[0].flags.svg} 
-              name={data[0].name.common}
-              population={data[0].population}
-              region={data[0].region}
-              capital={data[0].capital[0]}
+            <Countries
+              data={data}
             />
           </>
       }

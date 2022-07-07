@@ -5,7 +5,7 @@ interface CountryCardProps {
   flag: string;
   population: number;
   region: string;
-  capital: string;
+  capital?: string;
 }
 
 export function CountryCard( props : CountryCardProps ) {
@@ -23,11 +23,13 @@ export function CountryCard( props : CountryCardProps ) {
         <InfoHeader>Region:</InfoHeader>
         <InfoText>{props.region}</InfoText>
       </InfoContainer>
-      <InfoContainer>
-        <InfoHeader>Capital:</InfoHeader>
-        <InfoText>{props.capital}</InfoText>
-      </InfoContainer>
-      
+      {
+        props.capital && 
+          <InfoContainer>
+            <InfoHeader>Capital:</InfoHeader>
+            <InfoText>{props.capital}</InfoText>
+          </InfoContainer>
+      }
     </Container>
   );
 }
