@@ -1,36 +1,47 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 30px;
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 40vh;
-  width: 10vw;
   background-color: hsl(209, 23%, 22%);
 
   border-radius: 4px;
+  margin: 0 30px 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 345px;
+  width: 260px;
+
+  @media (max-width: 375px) {
+    width: 84vw;
+    height: 415px;
+    margin: 0 8vw 30px;
+  }
 `;
 
 export const FlagContainer = styled.img`
-  width: 10vw;
-  object-fit: contain;
+  height: 155px;
 
+  @media (max-width: 375px) {
+    height: 185px;
+  }
+
+  object-fit: cover;
   border-radius: 4px 4px 0 0;
 `
 
 export const CountryName = styled.h3`
-  margin-left: 15px;
+  margin: 24px 0 6px 15px;
 
   color: hsl(0, 0%, 100%);
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 `;
 
 export const InfoContainer = styled.div`
+  margin-top: 12px;
   margin-left: 15px;
-
+  
   display: flex;
   width: 100%;
   align-items: center;
@@ -43,7 +54,7 @@ export const InfoHeader = styled.h4`
 `
 
 export const InfoText = styled.p`
-  margin-left: 2px;
+  margin-left: 4px;
 
   color: hsl(0, 0%, 100%);
   font-weight: 300;

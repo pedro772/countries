@@ -41,14 +41,16 @@ function App() {
     <div>
       <Navbar />
       {
-        data && 
-          <CountryCard 
-            flag={data[0].flags.svg} 
-            name={data[0].name.common}
-            population={data[0].population}
-            region={data[0].region}
-            capital={data[0].capital[0]}
-          />
+        data &&
+          <>
+            <CountryCard 
+              flag={data[0].flags.svg} 
+              name={data[0].name.common}
+              population={data[0].population}
+              region={data[0].region}
+              capital={data[0].capital[0]}
+            />
+          </>
       }
       
     </div>
