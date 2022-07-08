@@ -6,28 +6,29 @@ interface CountryCardProps {
   population: number;
   region: string;
   capital?: string;
+  theme: string;
 }
 
-export function CountryCard( props : CountryCardProps ) {
+export function CountryCard( { name, flag, population, region, capital, theme } : CountryCardProps ) {
   return (
-    <Container>
-      <FlagContainer src={props.flag} />
-      <CountryName>
-        {props.name}
+    <Container theme={theme}>
+      <FlagContainer src={flag} />
+      <CountryName theme={theme}>
+        {name}
       </CountryName>
-      <InfoContainer>
+      <InfoContainer theme={theme}>
         <InfoHeader>Population:</InfoHeader>
-        <InfoText>{props.population}</InfoText>
+        <InfoText>{population}</InfoText>
       </InfoContainer>
-      <InfoContainer>
+      <InfoContainer theme={theme}>
         <InfoHeader>Region:</InfoHeader>
-        <InfoText>{props.region}</InfoText>
+        <InfoText>{region}</InfoText>
       </InfoContainer>
       {
-        props.capital && 
-          <InfoContainer>
+        capital && 
+          <InfoContainer theme={theme}>
             <InfoHeader>Capital:</InfoHeader>
-            <InfoText>{props.capital}</InfoText>
+            <InfoText>{capital}</InfoText>
           </InfoContainer>
       }
     </Container>

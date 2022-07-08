@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { GlobalStyles } from "./GlobalStyles";
 import { Countries } from "./components/Countries";
 import { Navbar } from "./components/Navbar"
 
@@ -22,6 +23,7 @@ interface CountryData {
 
 function App() {
   const [data, setData] = useState<CountryData[]>();
+  const [theme, setTheme] = useState<string>("dark");
 
   async function fetchData() {
     try {
@@ -37,14 +39,20 @@ function App() {
     fetchData();
   }, []);
 
+  function toggleTheme() {
+    setTheme(prevTheme => prevTheme === "dark" ? "light" : "dark");
+  }
+
   return (
     <div>
-      <Navbar />
+      <GlobalStyles theme={theme} />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       {
         data &&
           <>
             <Countries
               data={data}
+              theme={theme}
             />
           </>
       }

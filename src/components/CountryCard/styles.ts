@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: hsl(209, 23%, 22%);
+  background-color: ${
+    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+  };
 
   border-radius: 4px;
   margin-bottom: 30px;
@@ -33,7 +35,9 @@ export const FlagContainer = styled.img`
 export const CountryName = styled.h3`
   margin: 24px 0 6px 15px;
 
-  color: hsl(0, 0%, 100%);
+  color: ${
+    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+  };
   font-weight: 800;
   font-size: 1.2rem;
 `;
@@ -45,10 +49,13 @@ export const InfoContainer = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
+
+  color: ${
+    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+  };
 `
 
 export const InfoHeader = styled.h4`
-  color: hsl(0, 0%, 100%);
   font-weight: 600;
   font-size: 0.9rem;
 `
@@ -56,7 +63,6 @@ export const InfoHeader = styled.h4`
 export const InfoText = styled.p`
   margin-left: 4px;
 
-  color: hsl(0, 0%, 100%);
   font-weight: 300;
   font-size: 0.9rem;
 `

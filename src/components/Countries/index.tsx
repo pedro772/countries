@@ -17,14 +17,15 @@ interface CountriesProps {
     population: number;
     region: string;
     capital?: string[];
-  }[]
+  }[];
+  theme: string;
 }
 
-export function Countries( props : CountriesProps ) {
+export function Countries( { data, theme } : CountriesProps ) {
   return (
     <Container>
       {
-        props.data.map(country => (
+        data.map(country => (
           <>
             {
               country.capital ?
@@ -33,13 +34,15 @@ export function Countries( props : CountriesProps ) {
                   name={country.name.common}
                   population={country.population}
                   region={country.region}
-                  capital={country.capital[0]} />
+                  capital={country.capital[0]}
+                  theme={theme} />
                 :
                 <CountryCard 
                   flag={country.flags.svg} 
                   name={country.name.common}
                   population={country.population}
-                  region={country.region} />
+                  region={country.region}
+                  theme={theme} />
             }
           </>
           

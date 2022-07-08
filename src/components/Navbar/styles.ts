@@ -5,11 +5,19 @@ export const Container = styled.nav`
   align-items: center;
   justify-content: space-between;
   height: 10vh;
-  background-color: hsl(209, 23%, 22%);
+  background-color: ${
+    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+  };
+
+  box-shadow: 0 4px 4px ${
+    props => props.theme === "dark" ? "transparent" : "#f1f1f1"
+  };
 `;
 
 export const Heading = styled.h2`
-  color: hsl(0, 0%, 100%);
+  color: ${
+    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+  };
 
   margin-left: 3vh;
   font-size: 0.9rem;
@@ -25,7 +33,9 @@ export const ThemeSwitcherButton = styled.button`
   display: flex;
   align-items: center;
 
-  color: hsl(0, 0%, 100%);
+  color: ${
+    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+  };
   background-color: transparent;
   border: 0;
   cursor: pointer;
