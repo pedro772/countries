@@ -19,6 +19,10 @@ export const Container = styled.div`
     height: 415px;
     margin: 0 8vw 30px;
   }
+
+  box-shadow: 0 0 10px ${
+    props => props.theme === "dark" ? "transparent" : "#f1f1f1"
+  };
 `;
 
 export const FlagContainer = styled.img`

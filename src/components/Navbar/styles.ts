@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.nav`
+  position: fixed;
+  top: 0;
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 10vh;
+
   background-color: ${
     props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
   };
