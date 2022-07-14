@@ -6,4 +6,10 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
+
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
 `;
