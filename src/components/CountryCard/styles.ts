@@ -6,7 +6,7 @@ export const Container = styled.div`
   };
 
   border-radius: 4px;
-  margin-bottom: 30px;
+  margin: 0 30px 0;
 
   display: flex;
   flex-direction: column;

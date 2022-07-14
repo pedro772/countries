@@ -29,7 +29,7 @@ function App() {
   const [theme, setTheme] = useState<string>("dark");
   const [countryToFilter, setCountryToFilter] = useState<string>("");
   const [currentScreen, setCurrentScreen] = useState<string>("MENU");
-  const regionOptions = ["World", "America", "Africa", "Asia", "Europe", "Oceania"];
+  const regionOptions = ["World", "Americas", "Africa", "Asia", "Europe", "Oceania"];
 
   async function fetchData() {
     try {
@@ -80,6 +80,7 @@ function App() {
         filterByName={filterByName}
         currentScreen={currentScreen}
         regionOptions={regionOptions}
+        theme={theme}
       />
       {
         manageableData && manageableData.length > 0 ?

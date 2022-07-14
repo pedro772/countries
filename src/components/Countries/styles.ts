@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: calc(10vh + 30px);
+  margin: 60px 0 30px;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: -30px;
+  justify-content: space-between;
 
-  @media (max-width: 375px) {
+  @media (max-width: 640px) {
     display: flex;
     flex-direction: column;
     justify-items: center;
+    align-items: center;
   }
 `;
