@@ -4,6 +4,7 @@ import { GlobalStyles } from "./GlobalStyles";
 import { Countries } from "./components/Countries";
 import { Navbar } from "./components/Navbar"
 import { Actions } from "./components/Actions";
+import { DetailedCountry } from "./components/DetailedCountry";
 
 interface CountryData {
   name: {
@@ -96,8 +97,22 @@ function App() {
         theme={theme}
       />
       {
-        manageableData && manageableData.length > 0 ?
+        manageableData && manageableData.length > 0 && data?
           <>
+            {/* <DetailedCountry
+              borders={manageableData[0].borders}
+              cca3={manageableData[0].cca3}
+              currencies={manageableData[0].currencies}
+              flags={manageableData[0].flags}
+              languages={manageableData[0].languages}
+              name={manageableData[0].name}
+              population={manageableData[0].population}
+              region={manageableData[0].region}
+              subregion={manageableData[0].region}
+              theme={theme}
+              tld={manageableData[0].tld}
+              capital={manageableData[0].capital}
+            /> */}
             <Countries
               data={manageableData}
               theme={theme}
