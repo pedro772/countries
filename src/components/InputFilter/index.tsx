@@ -27,7 +27,7 @@ export function InputFilter( { setCountry, filter, theme } : FilterProps ) {
       </Button>
       <Input
         type="text"
-        placeholder="Search for a country"
+        placeholder="Search for a country..."
         onChange={handleChange}
         theme={theme}
       />

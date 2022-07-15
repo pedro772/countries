@@ -15,12 +15,16 @@ export function SelectFilter( { setRegion, regionOptions, theme } : FilterProps 
   }
 
   return (
-  <SelectRegion onChange={handleSelect} placeholder="Filter by region" theme={theme} >
-      {
-        regionOptions.map(region => (
-          <RegionOption theme={theme}>{region}</RegionOption>
-        ))
-      }
-    </SelectRegion>
+    <>
+      <SelectRegion name="regions" onChange={handleSelect} theme={theme}>
+        <RegionOption value="" theme={theme} disabled selected hidden>Filter by Region</RegionOption>
+        {
+          regionOptions.map(region => (
+            <RegionOption value={region} theme={theme}>{region}</RegionOption>
+          ))
+        }
+      </SelectRegion>
+    </>
+    
   );
 }

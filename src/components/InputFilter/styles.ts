@@ -9,7 +9,11 @@ export const FilterForm = styled.form`
   };
 
   width: 25vw;
-  min-width: 400px;
+  min-width: 320px;
+
+  @media (max-width: 640px) {
+    min-width: 260px;
+  };
 
   border-radius: 6px;
 `;
@@ -22,7 +26,11 @@ export const Button = styled.button`
   border: 0;
   cursor: pointer;
 
-  padding: 20px 30px 20px 30px;
+  padding: 15px 30px;
+
+  @media (max-width: 640px) {
+    padding: 10px 20px;
+  };
 
   :hover {
     opacity: 0.8;
@@ -31,7 +39,7 @@ export const Button = styled.button`
 `;
 
 export const SearchIcon = styled.img`
-  height: 0.5rem;
+  height: 0.7rem;
 
   @media (min-width: 600px) {
     height: 1rem;
@@ -41,7 +49,7 @@ export const SearchIcon = styled.img`
 export const Input = styled.input`
   display: flex;
   flex: 1;
-  padding: 20px 0;
+  padding: 15px 0;
 
   background-color: transparent;
   border: 0;
@@ -49,6 +57,11 @@ export const Input = styled.input`
   font-family: "Nunito Sans";
   font-weight: 300;
   font-size: 1rem;
+
+  @media (max-width: 640px) {
+    font-size: 0.8rem;
+    padding: 10px 0;
+  };
 
   color: ${
     props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
