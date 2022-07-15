@@ -30,6 +30,8 @@ interface CountryData {
     [key: string]: string;
   }
   capital?: string[];
+  borders: string[];
+  cca3: string;
 }
 
 function App() {
