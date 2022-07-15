@@ -65,7 +65,8 @@ function App() {
       country.region === regionSelected
     );
 
-    regionSelected === "World" ? setManageableData(data) : setManageableData(filteredData);
+    regionSelected === "World" || regionSelected === undefined ? 
+      setManageableData(data) : setManageableData(filteredData);
   }
 
   useEffect(() => {
