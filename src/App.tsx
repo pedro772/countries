@@ -47,7 +47,7 @@ function App() {
       country.name.common.toLowerCase() === countryToFilter.toLowerCase()
     );
 
-    countryToFilter === "" ? setManageableData(data) : setManageableData(filteredData);
+    countryToFilter === "" ? filterByRegion() : setManageableData(filteredData);
   }
 
   function filterByRegion() {
