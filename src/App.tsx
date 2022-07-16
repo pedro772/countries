@@ -42,6 +42,7 @@ function App() {
   const [theme, setTheme] = useState<string>("dark");
   const [countryToFilter, setCountryToFilter] = useState<string>("");
   const [currentScreen, setCurrentScreen] = useState<string>("MENU");
+
   const regionOptions = ["World", "Americas", "Africa", "Asia", "Europe", "Oceania"];
 
   async function fetchData() {
@@ -112,6 +113,7 @@ function App() {
               theme={theme}
               tld={manageableData[0].tld}
               capital={manageableData[0].capital}
+              data={data}
             /> */}
             <Countries
               data={manageableData}
