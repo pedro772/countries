@@ -11,17 +11,17 @@ export const Container = styled.nav`
   height: 10vh;
 
   background-color: ${
-    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+    props => props.theme.elementColor
   };
 
   box-shadow: 0 4px 4px ${
-    props => props.theme === "dark" ? "transparent" : "#f1f1f1"
+    props => props.theme.boxShadow
   };
 `;
 
 export const Heading = styled.h2`
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
 
   margin-left: 3vh;
@@ -39,7 +39,7 @@ export const ThemeSwitcherButton = styled.button`
   align-items: center;
 
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
   background-color: transparent;
   border: 0;

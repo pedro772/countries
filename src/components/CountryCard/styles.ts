@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: ${
-    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+    props => props.theme.elementColor
   };
 
   border-radius: 4px;
@@ -21,7 +21,7 @@ export const Container = styled.div`
   }
 
   box-shadow: 0 0 10px ${
-    props => props.theme === "dark" ? "transparent" : "#f1f1f1"
+    props => props.theme.boxShadow
   };
 `;
 
@@ -40,7 +40,7 @@ export const CountryName = styled.h3`
   margin: 24px 0 6px 15px;
 
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
   font-weight: 800;
   font-size: 1.2rem;
@@ -55,7 +55,7 @@ export const InfoContainer = styled.div`
   align-items: center;
 
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
 `
 

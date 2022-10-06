@@ -4,18 +4,18 @@ import { ThemeSwitcherButton } from "./styles";
 import { ThemeSwitcherIcon } from "./styles";
 
 interface NavbarProps {
-  theme: string;
   toggleTheme: any;
+  useDarkTheme: boolean;
 }
 
-export function Navbar( { theme, toggleTheme } : NavbarProps ) {
+export function Navbar( { toggleTheme, useDarkTheme } : NavbarProps ) {
   return (
-    <Container theme={theme}>
-      <Heading theme={theme}>
+    <Container>
+      <Heading>
         Where in the world?
       </Heading>
-      <ThemeSwitcherButton onClick={toggleTheme} theme={theme}>
-        <ThemeSwitcherIcon src={theme === "dark" ? "/assets/moon-solid-white.svg" : "/assets/moon-solid.svg"}/>
+      <ThemeSwitcherButton onClick={toggleTheme}>
+        <ThemeSwitcherIcon src={useDarkTheme ? "/assets/moon-solid-white.svg" : "/assets/moon-solid.svg"}/>
         Dark Mode
       </ThemeSwitcherButton>
     </Container>

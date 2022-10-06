@@ -4,10 +4,10 @@ import { Button, FilterForm, Input, SearchIcon } from "./styles";
 interface FilterProps {
   setCountry: Function;
   filter: Function;
-  theme: string;
+  useDarkTheme: boolean;
 }
 
-export function InputFilter( { setCountry, filter, theme } : FilterProps ) {
+export function InputFilter( { setCountry, filter, useDarkTheme } : FilterProps ) {
   function handleSubmit(e : FormEvent) {
     e.preventDefault();
 
@@ -21,15 +21,14 @@ export function InputFilter( { setCountry, filter, theme } : FilterProps ) {
   }
 
   return (
-    <FilterForm onSubmit={handleSubmit} theme={theme}>
-      <Button type="submit" theme={theme}>
-        <SearchIcon src={theme === "dark" ? "/assets/magnifying-glass-solid-white.svg" : "/assets/magnifying-glass-solid.svg"} />
+    <FilterForm onSubmit={handleSubmit}>
+      <Button type="submit">
+        <SearchIcon src={useDarkTheme ? "/assets/magnifying-glass-solid-white.svg" : "/assets/magnifying-glass-solid.svg"} />
       </Button>
       <Input
         type="text"
         placeholder="Search for a country..."
         onChange={handleChange}
-        theme={theme}
       />
     </FilterForm>
   );

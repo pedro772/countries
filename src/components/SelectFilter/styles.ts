@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { blue } from "../../utils/colors";
 
 export const SelectRegion = styled.select`
   -webkit-appearance: none;
@@ -9,11 +10,11 @@ export const SelectRegion = styled.select`
   align-items: center;
 
   background-color: ${
-    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+    props => props.theme.elementColor
   };
 
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
 
   font-family: "Nunito Sans";
@@ -28,7 +29,7 @@ export const SelectRegion = styled.select`
   border-radius: 6px;
 
   background-image: ${
-    props => props.theme === "dark" ? `url("/assets/chevron-down-solid-white.svg")` : `url("/assets/chevron-down-solid.svg")`
+    props => props.theme.backgroundColor === blue[200] ? `url("/assets/chevron-down-solid-white.svg")` : `url("/assets/chevron-down-solid.svg")`
   };
   background-position: 92%;
   background-size: 0.6rem;
@@ -49,10 +50,10 @@ export const RegionOption = styled.option`
   -moz-appearance: none;
 
   background-color: ${
-    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+    props => props.theme.elementColor
   };
 
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
 `;

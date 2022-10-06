@@ -5,7 +5,7 @@ export const FilterForm = styled.form`
   align-items: center;
 
   background-color: ${
-    props => props.theme === "dark" ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+    props => props.theme.elementColor
   };
 
   width: 25vw;
@@ -20,7 +20,7 @@ export const FilterForm = styled.form`
 
 export const Button = styled.button`
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
   background-color: transparent;
   border: 0;
@@ -64,12 +64,12 @@ export const Input = styled.input`
   };
 
   color: ${
-    props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+    props => props.theme.textColor
   };
 
   ::placeholder {
     color: ${
-      props => props.theme === "dark" ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"
+      props => props.theme.textColor
     };
   }
 

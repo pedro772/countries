@@ -18,10 +18,9 @@ interface CountriesProps {
     region: string;
     capital?: string[];
   }[];
-  theme: string;
 }
 
-export function Countries( { data, theme } : CountriesProps ) {
+export function Countries( { data } : CountriesProps ) {
   return (
     <Container>
       {
@@ -34,15 +33,13 @@ export function Countries( { data, theme } : CountriesProps ) {
                   name={country.name.common}
                   population={country.population}
                   region={country.region}
-                  capital={country.capital[0]}
-                  theme={theme} />
+                  capital={country.capital[0]} />
                 :
                 <CountryCard 
                   flag={country.flags.svg} 
                   name={country.name.common}
                   population={country.population}
-                  region={country.region}
-                  theme={theme} />
+                  region={country.region} />
             }
           </>
           

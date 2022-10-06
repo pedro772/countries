@@ -27,7 +27,6 @@ interface DetailedCountryProps {
   capital?: string[];
   borders: string[];
   cca3: string;
-  theme: string;
   data: CountryData[];
 }
 
@@ -85,8 +84,7 @@ export function DetailedCountry( {
   languages, 
   capital, 
   borders, 
-  cca3, 
-  theme,
+  cca3,
   data
 } : DetailedCountryProps ) {
   const nativeNameKeys: any[] = Object.keys(name.nativeName);

@@ -8,22 +8,21 @@ interface ActionsProps {
   setRegion: Function;
   filterByName: Function;
   regionOptions: string[];
-  theme: string;
+  useDarkTheme: boolean;
 }
 
-export function Actions( { currentScreen, setCountry, setRegion, filterByName, regionOptions, theme } : ActionsProps ) {
+export function Actions( { currentScreen, setCountry, setRegion, filterByName, regionOptions, useDarkTheme } : ActionsProps ) {
 
   return (
     <ActionsContainer>
       <InputFilter
         setCountry={setCountry}
         filter={filterByName}
-        theme={theme}
+        useDarkTheme={useDarkTheme}
       />
       <SelectFilter
         setRegion={setRegion}
         regionOptions={regionOptions}
-        theme={theme}
       />
     </ActionsContainer>
   );

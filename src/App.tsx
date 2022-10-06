@@ -5,6 +5,8 @@ import { Countries } from "./components/Countries";
 import { Navbar } from "./components/Navbar"
 import { Actions } from "./components/Actions";
 import { DetailedCountry } from "./components/DetailedCountry";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./utils/themes";
 
 interface CountryData {
   name: {
@@ -39,7 +41,7 @@ function App() {
   const [data, setData] = useState<CountryData[]>();
   const [manageableData, setManageableData] = useState<CountryData[]>();
   const [regionSelected, setRegionSelected] = useState<string>();
-  const [theme, setTheme] = useState<string>("dark");
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
   const [countryToFilter, setCountryToFilter] = useState<string>("");
   const [currentScreen, setCurrentScreen] = useState<string>("MENU");
 
@@ -82,49 +84,50 @@ function App() {
   }, [regionSelected])
 
   function toggleTheme() {
-    setTheme(prevTheme => prevTheme === "dark" ? "light" : "dark");
+    setUseDarkTheme(prevTheme => !prevTheme);
   }
 
   return (
-    <div>
-      <GlobalStyles theme={theme} />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Actions
-        setCountry={setCountryToFilter}
-        setRegion={setRegionSelected}
-        filterByName={filterByName}
-        currentScreen={currentScreen}
-        regionOptions={regionOptions}
-        theme={theme}
-      />
-      {
-        manageableData && manageableData.length > 0 && data?
-          <>
-            {/* <DetailedCountry
-              borders={manageableData[0].borders}
-              cca3={manageableData[0].cca3}
-              currencies={manageableData[0].currencies}
-              flags={manageableData[0].flags}
-              languages={manageableData[0].languages}
-              name={manageableData[0].name}
-              population={manageableData[0].population}
-              region={manageableData[0].region}
-              subregion={manageableData[0].region}
-              theme={theme}
-              tld={manageableData[0].tld}
-              capital={manageableData[0].capital}
-              data={data}
-            /> */}
-            <Countries
-              data={manageableData}
-              theme={theme}
-            />
-          </>
-          :
-          <h1>No countries found</h1>
-      }
-      
-    </div>
+    <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
+      <div>
+        <GlobalStyles />
+        <Navbar toggleTheme={toggleTheme} useDarkTheme={useDarkTheme} />
+        <Actions
+          setCountry={setCountryToFilter}
+          setRegion={setRegionSelected}
+          filterByName={filterByName}
+          currentScreen={currentScreen}
+          regionOptions={regionOptions}
+          useDarkTheme={useDarkTheme}
+        />
+        {
+          manageableData && manageableData.length > 0 && data?
+            <>
+              {/* <DetailedCountry
+                borders={manageableData[0].borders}
+                cca3={manageableData[0].cca3}
+                currencies={manageableData[0].currencies}
+                flags={manageableData[0].flags}
+                languages={manageableData[0].languages}
+                name={manageableData[0].name}
+                population={manageableData[0].population}
+                region={manageableData[0].region}
+                subregion={manageableData[0].region}
+                theme={theme}
+                tld={manageableData[0].tld}
+                capital={manageableData[0].capital}
+                data={data}
+              /> */}
+              <Countries
+                data={manageableData}
+              />
+            </>
+            :
+            <h1>No countries found</h1>
+        }
+      </div>
+    </ThemeProvider>
+    
   )
 }
 

@@ -4,10 +4,9 @@ import { SelectRegion ,RegionOption } from "./styles";
 interface FilterProps {
   setRegion: Function;
   regionOptions: string[];
-  theme: string;
 }
 
-export function SelectFilter( { setRegion, regionOptions, theme } : FilterProps ) {
+export function SelectFilter( { setRegion, regionOptions } : FilterProps ) {
   function handleSelect(e : ChangeEvent<HTMLSelectElement>) {
     const regionSelected = e.target.value;
 
@@ -16,11 +15,11 @@ export function SelectFilter( { setRegion, regionOptions, theme } : FilterProps 
 
   return (
     <>
-      <SelectRegion name="regions" onChange={handleSelect} theme={theme}>
-        <RegionOption value="" theme={theme} disabled selected hidden>Filter by Region</RegionOption>
+      <SelectRegion name="regions" onChange={handleSelect}>
+        <RegionOption value="" disabled selected hidden>Filter by Region</RegionOption>
         {
           regionOptions.map(region => (
-            <RegionOption value={region} theme={theme}>{region}</RegionOption>
+            <RegionOption value={region}>{region}</RegionOption>
           ))
         }
       </SelectRegion>
