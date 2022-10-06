@@ -21,7 +21,7 @@ export const Container = styled.div`
   }
 
   box-shadow: 0 0 10px ${
-    props => props.theme.boxShadow
+    props => props.theme.boxShadowColor
   };
 `;
 

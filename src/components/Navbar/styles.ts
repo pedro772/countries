@@ -15,7 +15,7 @@ export const Container = styled.nav`
   };
 
   box-shadow: 0 4px 4px ${
-    props => props.theme.boxShadow
+    props => props.theme.boxShadowColor
   };
 `;
 
