@@ -12,5 +12,5 @@ export const darkTheme = {
   backgroundColor: blue[200],
   elementColor: blue[100],
   textColor: white[100],
-  boxShadowColor: "transparent"
+  boxShadowColor: "#2d3945"
 }

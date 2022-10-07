@@ -20,7 +20,7 @@ export const Container = styled.div`
     margin: 0 8vw 30px;
   }
 
-  box-shadow: 0 0 10px ${
+  box-shadow: 0 0 8px ${
     props => props.theme.boxShadowColor
   };
 `;

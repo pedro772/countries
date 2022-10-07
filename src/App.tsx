@@ -103,7 +103,7 @@ function App() {
         {
           manageableData && manageableData.length > 0 && data?
             <>
-              {/* <DetailedCountry
+              <DetailedCountry
                 borders={manageableData[0].borders}
                 cca3={manageableData[0].cca3}
                 currencies={manageableData[0].currencies}
@@ -113,11 +113,10 @@ function App() {
                 population={manageableData[0].population}
                 region={manageableData[0].region}
                 subregion={manageableData[0].region}
-                theme={theme}
                 tld={manageableData[0].tld}
                 capital={manageableData[0].capital}
                 data={data}
-              /> */}
+              />
               <Countries
                 data={manageableData}
               />

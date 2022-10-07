@@ -1,4 +1,4 @@
-import { Container, FlagContainer, CountryName, InfoContainer, InfoHeader, InfoText, MainInfo, SecondaryInfo } from "./styles";
+import { Container, FlagContainer, CountryName, GeneralInfoContainer, InfoContainer, BorderInfoContainer, InfoHeader, InfoText, MainInfo, SecondaryInfo, DetailedInfoContainer, BorderCountryCard, BorderCountryText, BorderInfoHeader } from "./styles";
 
 interface DetailedCountryProps {
   name: {
@@ -106,43 +106,55 @@ export function DetailedCountry( {
   const mainInfo = [nativeName, population, region, subregion, capital && capital[0]];
   const secondaryInfo = [tld, formattedCurrencies, formattedLanguages];
 
-  const borderCountries = borders?.map(border => {
+  const borderCountries = borders?.map((border: any, key : any) => {
     const borderCountry = data.find(country => country.cca3 === border);
 
     return borderCountry?.name.common;
   })
-  const formattedBorderCountries = borderCountries?.join(", ");
 
   return (
     <Container>
-      <FlagContainer />
-      <InfoContainer>
-        <CountryName />
-        <MainInfo>
+      <FlagContainer src={flags.svg} />
+      <GeneralInfoContainer>
+        <CountryName>{name.common}</CountryName>
+        <DetailedInfoContainer>
+          <MainInfo>
+            {
+              mainInfo.map((info: any, key : any) => (
+                <InfoContainer>
+                  {/* @ts-ignore */}
+                  <InfoHeader>{mainInfoHeaders[key]}:</InfoHeader>
+                  <InfoText>{info}</InfoText>
+                </InfoContainer>
+              ))
+            }
+          </MainInfo>
+          <SecondaryInfo>
+            {
+              secondaryInfo.map((info: any, key : any) => (
+                <InfoContainer>
+                  {/* @ts-ignore */}
+                  <InfoHeader>{secondaryInfoHeaders[key]}:</InfoHeader>
+                  <InfoText>{info}</InfoText>
+                </InfoContainer>
+              ))
+            }
+          </SecondaryInfo>
+        </DetailedInfoContainer>
+        <BorderInfoContainer>
+          <BorderInfoHeader>Borders:</BorderInfoHeader>
           {
-            mainInfo.map((info: any, key : any) => (
-              <InfoContainer>
-                {/* @ts-ignore */}
-                <InfoHeader>{mainInfoHeaders[key]}</InfoHeader>
-                <InfoText>{info}</InfoText>
-              </InfoContainer>
-            ))
+            borders ?
+              borderCountries.map((border: any, key : any) => (
+                <BorderCountryCard>
+                  <BorderCountryText>{border}</BorderCountryText>
+                </BorderCountryCard>
+              ))
+              : <InfoText>None</InfoText>
           }
-        </MainInfo>
-        <SecondaryInfo>
-          {
-            secondaryInfo.map((info: any, key : any) => (
-              <InfoContainer>
-                {/* @ts-ignore */}
-                <InfoHeader>{secondaryInfoHeaders[key]}</InfoHeader>
-                <InfoText>{info}</InfoText>
-              </InfoContainer>
-            ))
-          }
-        </SecondaryInfo>
-        <InfoHeader>Borders:</InfoHeader>
-        <InfoText>{borders ? formattedBorderCountries : "None"}</InfoText>
-      </InfoContainer>
+          {/* <InfoText>{borders ? formattedBorderCountries : "None"}</InfoText> */}
+        </BorderInfoContainer>
+      </GeneralInfoContainer>
     </Container>
   );
 }
