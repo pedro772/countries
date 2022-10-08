@@ -144,8 +144,11 @@ export const BorderCountryCard = styled.div`
   background-color: ${
     props => props.theme.elementColor
   };
+  box-shadow: 0 0 8px ${
+    props => props.theme.boxShadowColor
+  };
 
-  border-radius: 4px;
+  border-radius: 1px;
 
   height: 30px;
   min-width: 80px;
