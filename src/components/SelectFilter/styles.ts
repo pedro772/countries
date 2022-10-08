@@ -43,6 +43,10 @@ export const SelectRegion = styled.select`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 640px) {
+    margin-top: 30px;
+  }
 `;
 
 export const RegionOption = styled.option`
