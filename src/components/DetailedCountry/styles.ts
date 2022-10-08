@@ -12,16 +12,21 @@ export const Container = styled.div`
   @media (max-width: 640px) {
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    align-items: center;
+    align-items: flex-start;
+
+    width: 84vw;
   }
 `;
 
 export const FlagContainer = styled.img`
   width: 520px;
 
-  @media (max-width: 375px) {
-    height: 600px;
+  @media (max-width: 640px) {
+    width: 84vw;
+  }
+
+  @media ((min-width: 640px) and (max-width: 1020px)) {
+    width: 280px;
   }
 
   object-fit: cover;
@@ -33,11 +38,24 @@ export const GeneralInfoContainer = styled.div`
   flex: 1;
 
   margin-left: 10vw;
+
+  @media (max-width: 640px) {
+    flex-grow: 1;
+    margin-left: 0;
+  }
+
+  @media ((min-width: 640px) and (max-width: 1020px)) {
+    margin-left: 20px;
+  }
 `;
 
 export const DetailedInfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -84,6 +102,13 @@ export const BorderInfoContainer = styled.div`
 
   margin-top: 10px;
   margin-bottom: 30px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 30px;
+  }
 `;
 
 export const BorderInfoHeader = styled.h4`
@@ -97,13 +122,24 @@ export const BorderInfoHeader = styled.h4`
   };
 `;
 
-export const BorderCountryCard = styled.div`
-  margin-right: 10px;
+export const BorderCountryCardsContainer = styled.div`
+  align-items: flex-start;
 
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+
+  @media (max-width: 640px) {
+    margin-top: 10px;
+  }
+`;
+
+export const BorderCountryCard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: content;
 
   background-color: ${
     props => props.theme.elementColor
@@ -130,4 +166,7 @@ export const MainInfo = styled.div`
 `;
 
 export const SecondaryInfo = styled.div`
+  @media (max-width: 640px) {
+    margin-top: 30px;
+  }
 `;

@@ -1,4 +1,4 @@
-import { Container, FlagContainer, CountryName, GeneralInfoContainer, InfoContainer, BorderInfoContainer, InfoHeader, InfoText, MainInfo, SecondaryInfo, DetailedInfoContainer, BorderCountryCard, BorderCountryText, BorderInfoHeader } from "./styles";
+import { Container, FlagContainer, CountryName, GeneralInfoContainer, InfoContainer, BorderInfoContainer, BorderCountryCardsContainer, InfoHeader, InfoText, MainInfo, SecondaryInfo, DetailedInfoContainer, BorderCountryCard, BorderCountryText, BorderInfoHeader } from "./styles";
 
 interface DetailedCountryProps {
   name: {
@@ -142,7 +142,8 @@ export function DetailedCountry( {
           </SecondaryInfo>
         </DetailedInfoContainer>
         <BorderInfoContainer>
-          <BorderInfoHeader>Borders:</BorderInfoHeader>
+          <BorderInfoHeader>Border Countries:</BorderInfoHeader>
+          <BorderCountryCardsContainer>
           {
             borders ?
               borderCountries.map((border: any, key : any) => (
@@ -152,7 +153,7 @@ export function DetailedCountry( {
               ))
               : <InfoText>None</InfoText>
           }
-          {/* <InfoText>{borders ? formattedBorderCountries : "None"}</InfoText> */}
+          </BorderCountryCardsContainer>
         </BorderInfoContainer>
       </GeneralInfoContainer>
     </Container>
