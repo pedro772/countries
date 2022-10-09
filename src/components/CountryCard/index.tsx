@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Container, FlagContainer, CountryName, InfoContainer, InfoHeader, InfoText } from "./styles";
-
+import { useNavigate } from "react-router-dom";
+import DataContext from "../../utils/context/data";
 interface CountryCardProps {
   name: string;
   flag: string;
@@ -9,8 +11,22 @@ interface CountryCardProps {
 }
 
 export function CountryCard( { name, flag, population, region, capital } : CountryCardProps ) {
+  const navigate = useNavigate();
+
+  const { manageableData, setManageableData } = useContext(DataContext);
+
+  function showDetailedCountry() {
+    const filteredData = manageableData?.filter(country => 
+      country.name.common.toLowerCase() === name.toLowerCase()
+    );
+
+    setManageableData(filteredData)
+    
+    navigate("/details");
+  }
+
   return (
-    <Container>
+    <Container onClick={showDetailedCountry}>
       <FlagContainer src={flag} />
       <CountryName>
         {name}

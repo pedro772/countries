@@ -59,12 +59,8 @@ export function Home() {
           useDarkTheme={useDarkTheme}
         />
         {
-          manageableData && manageableData.length > 0 && data?
-            <>
-              <Countries
-                data={manageableData}
-              />
-            </>
+          manageableData[0].name.common != "" ?
+            <Countries data={manageableData} />
             :
             <h1>No countries found</h1>
         }

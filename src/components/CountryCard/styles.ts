@@ -23,6 +23,12 @@ export const Container = styled.div`
   box-shadow: 0 0 8px ${
     props => props.theme.boxShadowColor
   };
+
+  :hover {
+    opacity: 0.85;
+    transition: ease-in-out, 0.2s;
+    cursor: pointer;
+  }
 `;
 
 export const FlagContainer = styled.img`

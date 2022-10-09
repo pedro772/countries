@@ -24,6 +24,5 @@ export function Details() {
       data={data}
     />
     </>
-        
   )
 }
