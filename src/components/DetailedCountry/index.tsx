@@ -101,15 +101,17 @@ export function DetailedCountry( {
   ));
   const formattedLanguages = languageList?.join(", ");
 
+  const populationFormatted = population.toString().replace(/\d{1,3}(?=(\d{3})+(?!\d))/g , "$&,");
+
   // Fix capital exhibition for countries with multiple capitals
-  const mainInfo = [nativeName, population, region, subregion, capital && capital[0]];
+  const mainInfo = [nativeName, populationFormatted, region, subregion, capital && capital[0]];
   const secondaryInfo = [tld, formattedCurrencies, formattedLanguages];
 
   const borderCountries = borders?.map((border: any, key : any) => {
     const borderCountry = data.find(country => country.cca3 === border);
 
     return borderCountry?.name.common;
-  })
+  });
 
   return (
     <Container>

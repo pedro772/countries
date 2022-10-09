@@ -50,7 +50,9 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetchData();
+    if(manageableData !== data) {
+      fetchData();
+    }
   }, []);
 
   return (

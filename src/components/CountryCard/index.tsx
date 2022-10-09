@@ -23,6 +23,8 @@ export function CountryCard( { name, flag, population, region, capital } : Count
     navigate("/details");
   }
 
+  const populationFormatted = population.toString().replace(/\d{1,3}(?=(\d{3})+(?!\d))/g , "$&,");
+
   return (
     <Container onClick={showDetailedCountry}>
       <FlagContainer src={flag} />
@@ -31,7 +33,7 @@ export function CountryCard( { name, flag, population, region, capital } : Count
       </CountryName>
       <InfoContainer>
         <InfoHeader>Population:</InfoHeader>
-        <InfoText>{population}</InfoText>
+        <InfoText>{populationFormatted}</InfoText>
       </InfoContainer>
       <InfoContainer>
         <InfoHeader>Region:</InfoHeader>
