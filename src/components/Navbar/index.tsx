@@ -19,7 +19,7 @@ export function Navbar() {
       </Heading>
       <ThemeSwitcherButton onClick={toggleTheme}>
         <ThemeSwitcherIcon src={useDarkTheme ? "/assets/moon-solid-white.svg" : "/assets/moon-solid.svg"}/>
-        Dark Mode
+        { useDarkTheme ? "Dark Mode" : "Light Mode" }
       </ThemeSwitcherButton>
     </Container>
   );
