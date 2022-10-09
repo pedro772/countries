@@ -83,8 +83,7 @@ export function DetailedCountry( {
   currencies, 
   languages, 
   capital, 
-  borders, 
-  cca3,
+  borders,
   data
 } : DetailedCountryProps ) {
   const nativeNameKeys: any[] = Object.keys(name.nativeName);

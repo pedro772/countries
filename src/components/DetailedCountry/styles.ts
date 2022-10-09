@@ -20,6 +20,7 @@ export const Container = styled.div`
 
 export const FlagContainer = styled.img`
   width: 520px;
+  max-height: 300px;
 
   @media (max-width: 640px) {
     width: 84vw;
@@ -29,7 +30,7 @@ export const FlagContainer = styled.img`
     width: 280px;
   }
 
-  object-fit: cover;
+  object-fit: contain;
 `
 
 export const GeneralInfoContainer = styled.div`

@@ -28,6 +28,7 @@ export const Container = styled.div`
     opacity: 0.85;
     transition: ease-in-out, 0.2s;
     cursor: pointer;
+    z-index: 1;
   }
 `;
 

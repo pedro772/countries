@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+type ThemeType = {
+  backgroundColor: string;
+}
+
+export const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
   *,
   *::before,
   *::after {

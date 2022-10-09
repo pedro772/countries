@@ -1,8 +1,10 @@
-import  { DataContextProvider } from "./data";
+import { DataContextProvider } from "./data";
+import { UseDarkThemeContextProvider } from "./theme";
+import { combineContexts } from "./combineContexts";
 
-// @ts-ignore
-const GlobalContext = ({ children }) => {
-  return <DataContextProvider>{children}</DataContextProvider>
-}
+const providers = [
+  DataContextProvider,
+  UseDarkThemeContextProvider
+]
 
-export default GlobalContext;
+export const GlobalContext = combineContexts(...providers);

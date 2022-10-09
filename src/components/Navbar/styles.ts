@@ -17,6 +17,8 @@ export const Container = styled.nav`
   box-shadow: 0 4px 4px ${
     props => props.theme.boxShadowColor
   };
+
+  z-index: 2;
 `;
 
 export const Heading = styled.h2`

@@ -2,14 +2,13 @@ import axios from "axios"
 import { useContext, useEffect, useState } from "react";
 import { Countries } from "../components/Countries";
 import { Actions } from "../components/Actions";
+import { Navbar } from "../components/Navbar";
 import DataContext from "../utils/context/data";
 
 export function Home() {
   const { data, setData, manageableData, setManageableData } = useContext(DataContext);
   const [regionSelected, setRegionSelected] = useState<string>();
-  const [useDarkTheme, setUseDarkTheme] = useState(false);
   const [countryToFilter, setCountryToFilter] = useState<string>("");
-  const [currentScreen, setCurrentScreen] = useState<string>("MENU");
 
   const regionOptions = ["World", "Americas", "Africa", "Asia", "Europe", "Oceania"];
 
@@ -50,16 +49,15 @@ export function Home() {
 
   return (
       <>
+        <Navbar />
         <Actions
           setCountry={setCountryToFilter}
           setRegion={setRegionSelected}
           filterByName={filterByName}
-          currentScreen={currentScreen}
           regionOptions={regionOptions}
-          useDarkTheme={useDarkTheme}
         />
         {
-          manageableData[0].name.common != "" ?
+          manageableData && manageableData[0]?.name.common != "" ?
             <Countries data={manageableData} />
             :
             <h1>No countries found</h1>

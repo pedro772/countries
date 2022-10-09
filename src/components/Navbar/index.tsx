@@ -1,14 +1,17 @@
+import { useContext } from "react";
 import { Container } from "./styles";
 import { Heading } from "./styles";
 import { ThemeSwitcherButton } from "./styles";
 import { ThemeSwitcherIcon } from "./styles";
+import UseDarkThemeContext from "../../utils/context/theme"
 
-interface NavbarProps {
-  toggleTheme: any;
-  useDarkTheme: boolean;
-}
+export function Navbar() {
+  const { useDarkTheme, setUseDarkTheme } = useContext(UseDarkThemeContext);
 
-export function Navbar( { toggleTheme, useDarkTheme } : NavbarProps ) {
+  function toggleTheme() {
+    setUseDarkTheme(prevTheme => !prevTheme);
+  }
+
   return (
     <Container>
       <Heading>

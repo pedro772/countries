@@ -1,13 +1,15 @@
-import { ChangeEvent, FormEvent } from "react";
+import { useContext, ChangeEvent, FormEvent } from "react";
 import { Button, FilterForm, Input, SearchIcon } from "./styles";
+import UseDarkThemeContext from "../../utils/context/theme";
 
 interface FilterProps {
   setCountry: Function;
   filter: Function;
-  useDarkTheme: boolean;
 }
 
-export function InputFilter( { setCountry, filter, useDarkTheme } : FilterProps ) {
+export function InputFilter( { setCountry, filter } : FilterProps ) {
+  const { useDarkTheme } = useContext(UseDarkThemeContext);
+
   function handleSubmit(e : FormEvent) {
     e.preventDefault();
 

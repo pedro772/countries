@@ -12,7 +12,6 @@ interface CountryCardProps {
 
 export function CountryCard( { name, flag, population, region, capital } : CountryCardProps ) {
   const navigate = useNavigate();
-
   const { manageableData, setManageableData } = useContext(DataContext);
 
   function showDetailedCountry() {
@@ -21,7 +20,6 @@ export function CountryCard( { name, flag, population, region, capital } : Count
     );
 
     setManageableData(filteredData)
-    
     navigate("/details");
   }
 

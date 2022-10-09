@@ -1,6 +1,6 @@
 import { blue, gray, white } from "./colors";
 
-export const lightTheme = {
+export const defaultTheme = {
   backgroundColor: gray[100],
   elementColor: white[100],
   inputColor: gray[200],
