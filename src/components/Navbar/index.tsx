@@ -9,7 +9,7 @@ export function Navbar() {
   const { useDarkTheme, setUseDarkTheme } = useContext(UseDarkThemeContext);
 
   function toggleTheme() {
-    setUseDarkTheme(prevTheme => !prevTheme);
+    setUseDarkTheme(!useDarkTheme);
   }
 
   return (

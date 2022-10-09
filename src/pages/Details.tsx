@@ -1,15 +1,20 @@
 import { useContext, useState } from "react";
-import { Actions } from "../components/Actions";
+import { ThemeProvider } from "styled-components";
 import { DetailedCountry } from "../components/DetailedCountry";
 import { Navbar } from "../components/Navbar";
 import { ReturnButton } from "../components/ReturnButton";
 import DataContext from "../utils/context/data";
+import { defaultTheme, darkTheme } from "../utils/themes";
+import UseDarkThemeContext from "../utils/context/theme";
+import { GlobalStyles } from "../GlobalStyles";
 
 export function Details() {
   const { data, manageableData } = useContext(DataContext);
+  const { useDarkTheme } = useContext(UseDarkThemeContext);
 
   return (
-    <>
+    <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+      <GlobalStyles />
       <Navbar />
       <ReturnButton />
       <DetailedCountry
@@ -26,6 +31,6 @@ export function Details() {
         capital={manageableData[0].capital}
         data={data}
       />
-    </>
+    </ThemeProvider>
   )
 }

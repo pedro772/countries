@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 60px 30px 30px;
+  margin: 30px 30px 30px;
 
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +20,7 @@ export const Container = styled.div`
 
 export const FlagContainer = styled.img`
   width: 520px;
-  max-height: 300px;
+  max-height: 350px;
 
   @media (max-width: 640px) {
     width: 84vw;
@@ -30,15 +30,16 @@ export const FlagContainer = styled.img`
     width: 280px;
   }
 
-  object-fit: contain;
+  object-fit: fill;
 `
 
 export const GeneralInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: 500px;
 
-  margin-left: 10vw;
+  margin-left: 5vw;
 
   @media (max-width: 640px) {
     flex-grow: 1;

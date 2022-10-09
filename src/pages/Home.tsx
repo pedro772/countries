@@ -3,10 +3,16 @@ import { useContext, useEffect, useState } from "react";
 import { Countries } from "../components/Countries";
 import { Actions } from "../components/Actions";
 import { Navbar } from "../components/Navbar";
+import { defaultTheme, darkTheme } from "../utils/themes";
+import UseDarkThemeContext from "../utils/context/theme";
+import { GlobalStyles } from "../GlobalStyles";
 import DataContext from "../utils/context/data";
+import { ThemeProvider } from "styled-components";
 
 export function Home() {
   const { data, setData, manageableData, setManageableData } = useContext(DataContext);
+  const { useDarkTheme } = useContext(UseDarkThemeContext);
+
   const [regionSelected, setRegionSelected] = useState<string>();
   const [countryToFilter, setCountryToFilter] = useState<string>("");
 
@@ -48,7 +54,8 @@ export function Home() {
   }, []);
 
   return (
-      <>
+      <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+        <GlobalStyles />
         <Navbar />
         <Actions
           setCountry={setCountryToFilter}
@@ -62,6 +69,6 @@ export function Home() {
             :
             <h1>No countries found</h1>
         }
-      </>
+      </ThemeProvider>
   )
 }
