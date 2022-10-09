@@ -27,7 +27,7 @@ type CountryData = {
   capital?: string[];
   borders: string[];
   cca3: string;
-}
+}[]
 
 type PropsCountryData = {
   data: CountryData
@@ -38,11 +38,11 @@ type PropsCountryData = {
 }
 
 const DEFAULT_VALUE = {
-  data: {
+  data: [{
     name: {
       common: "",
       nativeName: [{
-        "": {
+        key: {
           common: ""
         }
       }]
@@ -55,25 +55,25 @@ const DEFAULT_VALUE = {
   subregion: "",
   tld: [""],
   currencies: [{
-    "": {
+    key: {
       name: ""
     }
   }],
   languages: {
-    "": ""
+    key: ""
   },
   capital: [""],
   borders: [""],
   cca3: ""
-  },
+  }],
 
   setData: () => {},
 
-  manageableData: {
+  manageableData: [{
     name: {
       common: "",
       nativeName: [{
-        "": {
+        key: {
           common: ""
         }
       }]
@@ -86,17 +86,17 @@ const DEFAULT_VALUE = {
   subregion: "",
   tld: [""],
   currencies: [{
-    "": {
+    key: {
       name: ""
     }
   }],
   languages: {
-    "": ""
+    key: ""
   },
   capital: [""],
   borders: [""],
   cca3: ""
-  },
+  }],
 
   setManageableData: () => {}
 }
@@ -126,4 +126,3 @@ const DataContextProvider = ({ children }) => {
 
 export { DataContextProvider };
 export default DataContext;
-
