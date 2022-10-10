@@ -6,7 +6,7 @@ type PropsUseDarkTheme = {
 }
 
 const DEFAULT_VALUE = {
-  useDarkTheme: true,
+  useDarkTheme: false,
   setUseDarkTheme: () => {},
 }
 

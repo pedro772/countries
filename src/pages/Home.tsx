@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useContext, useEffect, useState } from "react";
 import { Countries } from "../components/Countries";
+import { NoDataText } from "../components/NoDataText";
 import { Actions } from "../components/Actions";
 import { Navbar } from "../components/Navbar";
 import { defaultTheme, darkTheme } from "../utils/themes";
@@ -69,7 +70,7 @@ export function Home() {
           manageableData && manageableData[0]?.name.common != "" ?
             <Countries data={manageableData} />
             :
-            <h1>No countries found</h1>
+            <NoDataText />
         }
       </ThemeProvider>
   )
