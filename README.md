@@ -2,6 +2,8 @@
 
 * Link to challenge at Frontend Mentor: https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
 
+* Link to production version hosted at Vercel: https://countries-one-taupe.vercel.app/
+
 ### Technologies used:
 
 * React
