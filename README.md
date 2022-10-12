@@ -1,6 +1,6 @@
 # Frontend Mentor REST Countries API with color theme switcher Challenge
 
-* You can go to the challenge at Frontend Mentor by clickin on this [link](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+* You can go to the challenge at Frontend Mentor by clicking on this [link](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 * Access the production version hosted at Vercel [here](https://countries-one-taupe.vercel.app/)
 
